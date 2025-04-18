@@ -1,0 +1,28 @@
+/* Profile Styling */
+.profile-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+  
+  .profile-info {
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+  
+  .profile-info p {
+    margin: 0.5rem 0;
+  }
+  

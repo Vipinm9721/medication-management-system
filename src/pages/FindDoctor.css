@@ -1,0 +1,71 @@
+.find-doctor-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    font-family: 'Segoe UI', sans-serif;
+    color: #1e293b;
+  }
+  
+  .find-doctor-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+  
+  .find-doctor-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #475569;
+  }
+  
+  .doctor-search-form .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .doctor-search-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #334155;
+  }
+  
+  .doctor-search-form input,
+  .doctor-search-form select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    transition: border-color 0.3s ease;
+  }
+  
+  .doctor-search-form input:focus,
+  .doctor-search-form select:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+  
+  .search-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #1d4ed8;
+  }
+  

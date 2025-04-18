@@ -1,0 +1,60 @@
+.home-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #e0f2fe, #ffffff);
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .home-header {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  
+  .home-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+  
+  .home-description {
+    font-size: 1.1rem;
+    color: #475569;
+  }
+  
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .home-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .home-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 1rem;
+  }
+  
+  .card-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+  
