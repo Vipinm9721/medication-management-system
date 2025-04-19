@@ -62,7 +62,7 @@ bash
 Copy
 Edit
 # Clone the repository
-git clone https://github.com/Vipinm9721/Prescription-Management-System.git
+git clone https://github.com/Vipinm9721/medication-management-system.git
 
 # Navigate to the frontend directory
 cd frontend
