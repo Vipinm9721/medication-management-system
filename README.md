@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+Prescription Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Introduction
+The Prescription Tool is a web application designed to manage users' medications and prescriptions. It allows users to register, log in, and keep track of their medications, including dosage and upcoming doses. The application also includes functionality to store and retrieve data from Firebase for profile management and medication tracking.
 
-## Available Scripts
+Project Type
+Fullstack (Frontend: React.js, Backend: Firebase)
 
-In the project directory, you can run:
+Deployed App
+Frontend: https://yourfrontendappurl.com
+Backend: Firebase Authentication and Firestore
+Database: Firestore Realtime Database
 
-### `npm start`
+Directory Structure
+bash
+Copy
+Edit
+prescription-tool/
+├─ frontend/
+│  ├─ public/
+│  ├─ src/
+│  │  ├─ components/
+│  │  ├─ pages/
+│  │  ├─ firebase.js
+│  │  ├─ App.js
+│  │  ├─ Profile.js
+│  │  ├─ Register.js
+│  │  ├─ Login.js
+│  ├─ package.json
+│  ├─ .env
+Video Walkthrough of the project
+You can attach a very short video walkthrough here (1 - 3 minutes), showing the app’s main functionality.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Video Walkthrough of the Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Video Walkthrough of the codebase
+You can attach a very short video walkthrough here (1 - 5 minutes), explaining how the code is structured and highlighting important parts of the codebase.
 
-### `npm test`
+Video Walkthrough of the Codebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Features
+User Registration and Login: Users can create accounts, sign in, and securely manage their profiles.
 
-### `npm run build`
+Medication Tracking: Users can track their medications, including dosage, and upcoming doses.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Firebase Integration: Authentication and user data storage are handled using Firebase Authentication and Firestore.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Personalized Dashboard: The dashboard allows users to view their medications and set reminders.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Responsive UI: The application is designed to be mobile and desktop responsive.
 
-### `npm run eject`
+Design Decisions or Assumptions
+Firebase Realtime Database: Chose Firebase for ease of use and fast implementation of authentication and real-time data syncing.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React for Frontend: React was selected due to its component-based structure, making it easier to manage and maintain the UI.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Installation & Getting Started
+Follow the instructions below to get your project up and running.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Frontend Installation:
+bash
+Copy
+Edit
+# Clone the repository
+git clone https://github.com/Vipinm9721/Prescription-Management-System.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Navigate to the frontend directory
+cd frontend
 
-## Learn More
+# Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Run the development server
+npm start
+Backend Installation:
+The backend is handled by Firebase services, so there is no specific server setup required. Make sure you have Firebase set up with the necessary configurations.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a Firebase project.
 
-### Code Splitting
+Set up Firebase Authentication and Firestore.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Replace the Firebase configuration in the firebase.js file with your project’s credentials.
 
-### Analyzing the Bundle Size
+Usage
+Register an account by filling in the registration form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Log in to the app using the credentials you provided during registration.
 
-### Making a Progressive Web App
+Profile: View and edit your profile information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Dashboard: Manage your medications and get reminders for upcoming doses.
 
-### Advanced Configuration
+Example of medication details:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Medication: Paracetamol
 
-### Deployment
+Dosage: 500mg
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Next Dose: 2025-04-19 08:00 AM
 
-### `npm run build` fails to minify
+Example:
+bash
+Copy
+Edit
+# After registration and login, your profile will display your name, email, and medications.
+Credentials
+You can test the login and registration with the following user credentials (if available):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: testuser@example.com
+
+Password: password123
+
+APIs Used
+Firebase Authentication API: Handles user registration, login, and authentication.
+
+Firebase Authentication Docs: Link
+
+API Endpoints
+In this project, no custom backend API endpoints are required since Firebase is used for both authentication and data storage.
+
+Technology Stack
+Frontend: React.js, Firebase Authentication, Firebase Firestore
+
+Backend: Firebase (Authentication and Firestore)
+
+UI Framework: Tailwind CSS for styling
