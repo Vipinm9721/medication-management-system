@@ -1,36 +1,99 @@
-import React, { useEffect, useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
-import { auth, db } from '../firebase';
 
-function Profile() {
+import { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import './Profile.css';
+
+
+const Profile = () => {
   const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const auth = getAuth();
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      const user = auth.currentUser;
-      if (user) {
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setProfile(docSnap.data());
-        }
-      }
-    };
-    fetchProfile();
-  }, []);
+    const db = getDatabase();
 
-  if (!profile) return <p className="text-center mt-6">Loading profile...</p>;
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const profileRef = ref(db, "users/" + user.uid);
+        onValue(profileRef, (snapshot) => {
+          const data = snapshot.val();
+          setProfile(data);
+          setLoading(false);
+        });
+      } else {
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup listener
+  }, [auth]);
+
+  if (loading) return <div>Loading profile...</div>;
+
+  if (!profile) return <div>No profile data available.</div>;
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white shadow-md rounded-lg mt-6">
-      <h2 className="text-2xl font-semibold mb-4">User Profile</h2>
-      <p><strong>Name:</strong> {profile.name}</p>
-      <p><strong>Email:</strong> {profile.email}</p>
+    <div className="profile">
+      <h2>Hi, {profile.name || "User"}</h2>
+      <p><strong>Name:</strong> {profile.name || "N/A"}</p>
+      <p><strong>Email:</strong> {profile.email || "N/A"}</p>
+      <p><strong>Allergies:</strong> {profile.allergies || "Fever"}</p>
+      <p><strong>Conditions:</strong> {profile.currentConditions || "Not Good"}</p>
+      <p><strong>Doctor Contact:</strong> {profile.doctorContact || "1234567890"}</p>
     </div>
   );
-}
+};
 
 export default Profile;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+// import { doc, getDoc } from 'firebase/firestore';
+// import { auth, db } from '../firebase';
+
+// function Profile() {
+//   const [profile, setProfile] = useState(null);
+
+//   useEffect(() => {
+//     const fetchProfile = async () => {
+//       const user = auth.currentUser;
+//       if (user) {
+//         const docRef = doc(db, "users", user.uid);
+//         const docSnap = await getDoc(docRef);
+//         if (docSnap.exists()) {
+//           setProfile(docSnap.data());
+//         }
+//       }
+//     };
+//     fetchProfile();
+//   }, []);
+
+//   if (!profile) return <p className="text-center mt-6">Loading profile...</p>;
+
+//   return (
+//     <div className="p-6 max-w-md mx-auto bg-white shadow-md rounded-lg mt-6">
+//       <h2 className="text-2xl font-semibold mb-4">User Profile</h2>
+//       <p><strong>Name:</strong> {profile.name}</p>
+//       <p><strong>Email:</strong> {profile.email}</p>
+//     </div>
+//   );
+// }
+
+// export default Profile;
 
 
 

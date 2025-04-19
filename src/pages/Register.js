@@ -56,12 +56,10 @@
 
 
 
-// frontend/src/pages/Register.js
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../firebase';
 import './Register.css';
-
 
 function Register() {
   const [name, setName] = useState('');
@@ -73,11 +71,7 @@ function Register() {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-      // Set user's display name
-      await updateProfile(userCredential.user, {
-        displayName: name
-      });
+      await updateProfile(userCredential.user, { displayName: name });
 
       setMessage("Registration successful. Please log in.");
       setName('');
@@ -90,41 +84,42 @@ function Register() {
 
   return (
     <div className="register-container">
-    <div className="p-4 max-w-md mx-auto">
-      <h2 className="text-xl font-semibold mb-4">Register</h2>
-      <form onSubmit={handleRegister}>
-        <input
-          className="w-full p-2 mb-2 border"
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          required
-        />
-        <input
-          className="w-full p-2 mb-2 border"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          required
-        />
-        <input
-          className="w-full p-2 mb-2 border"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required
-        />
-        <button className="bg-blue-600 text-white w-full py-2" type="submit">
-          Register
-        </button>
-      </form>
-      {message && <p className="mt-2 text-sm text-gray-700">{message}</p>}
-    </div>
+      <div className="p-4 max-w-md mx-auto">
+        <h2 className="text-xl font-semibold mb-4">Register</h2>
+        <form onSubmit={handleRegister}>
+          <input
+            className="w-full p-2 mb-2 border"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+          />
+          <input
+            className="w-full p-2 mb-2 border"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+          <input
+            className="w-full p-2 mb-2 border"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+          <button className="bg-blue-600 text-white w-full py-2" type="submit">
+            Register
+          </button>
+        </form>
+        {message && <p className="mt-2 text-sm text-gray-700">{message}</p>}
+      </div>
     </div>
   );
 }
 
 export default Register;
+

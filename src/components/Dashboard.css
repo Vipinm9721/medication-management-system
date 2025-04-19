@@ -1,0 +1,343 @@
+/* Dashboard container */
+.dashboard-container {
+    padding: 2rem;
+    background-color: #f0f4f8;
+    min-height: 100vh;
+  }
+  
+  /* Title styling */
+  .dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Grid for cards */
+  .medications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Medication card styling */
+  .medication-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .medication-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Medication text styles */
+  .medication-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  .medication-info {
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Buttons */
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .mark-taken {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .mark-taken:hover {
+    background-color: #059669;
+  }
+  
+  .renewal {
+    background-color: #f59e0b;
+    color: white;
+  }
+  
+  .renewal:hover {
+    background-color: #d97706;
+  }
+  
+
+  .medication-card.taken {
+    background-color: #e0fce0;
+    border: 2px solid #10b981;
+    opacity: 0.9;
+  }
+  .button[disabled] {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+
+  .medication-card.renewed {
+    border: 2px solid #facc15;
+  }
+  
+  .button[disabled] {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+
+
+
+  .medication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .badge {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .badge.green {
+    background-color: #28a745;
+  }
+  
+  .badge.yellow {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .badge.red {
+    background-color: #dc3545;
+  }
+  
+  .button.clicked {
+    background-color: #28a745;
+    pointer-events: none;
+  }
+  
+  .button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+
+  .dashboard-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .filter-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+  }
+  
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+  
+  .timeline-content {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+  }
+  
+  .timeline-content h4 {
+    margin: 0 0 5px 0;
+  }
+  
+  .timeline-date {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  .timeline-item.current-med {
+    border-left: 4px solid #28a745;
+  }
+  
+  .timeline-item:not(.current-med) .timeline-dot {
+    background-color: #f0ad4e;
+  }
+  
+  /* Responsive popup container handled separately in ReminderPopup.css */
+  
+
+
+
+
+
+
+
+
+
+
+/* .dashboard-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-top: 2rem;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .medications-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .medication-card {
+    background: #f0f9ff;
+    border-left: 6px solid #3b82f6;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .medication-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+  }
+  
+  .medication-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .medication-info {
+    color: #334155;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .action-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .button {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .button.mark-taken {
+    background-color: #22c55e;
+    color: white;
+  }
+  
+  .button.mark-taken:hover {
+    background-color: #16a34a;
+  }
+  
+  .button.renewal {
+    background-color: #facc15;
+    color: #1e293b;
+  }
+  
+  .button.renewal:hover {
+    background-color: #eab308;
+  }
+  
+   */
