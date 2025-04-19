@@ -1,5 +1,5 @@
 import React from 'react';
-import './ScheduleAppointment.css'; // optional, or use App.css
+import './ScheduleAppointment.css';
 
 const ScheduleAppointment = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './PatientCare.css'; // optional, or use App.css
+import './PatientCare.css';
 
 const PatientCare = () => {
   return (

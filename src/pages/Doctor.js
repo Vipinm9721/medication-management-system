@@ -1,5 +1,5 @@
 import React from 'react';
-import './FindDoctor.css'; // optional, or include styles in App.css
+import './FindDoctor.css';
 
 const FindDoctor = () => {
   return (

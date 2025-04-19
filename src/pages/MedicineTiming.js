@@ -1,5 +1,5 @@
 import React from 'react';
-import './MedicineTiming.css'; // optional
+import './MedicineTiming.css';
 
 const MedicineTiming = () => {
   const patientProblem = 'High Fever and Sore Throat';
