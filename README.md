@@ -6,10 +6,7 @@ The Prescription Tool is a web application designed to manage users' medications
 Project Type
 Fullstack (Frontend: React.js, Backend: Firebase)
 
-Deployed App
-Frontend: https://yourfrontendappurl.com
-Backend: Firebase Authentication and Firestore
-Database: Firestore Realtime Database
+Deployed App link: https://resplendent-dodol-db7365.netlify.app/
 
 Directory Structure
 bash
